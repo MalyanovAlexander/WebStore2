@@ -3,7 +3,7 @@ using WebStore.Domain;
 using WebStore.Domain.Entities;
 using WebStore.Interfaces.Services;
 
-namespace WebStore.Services.InMemory;
+namespace WebStore.Services.Services.InMemory;
 
 [Obsolete("Устарел. Используйте SqlProductData", error: false)]
 public class InMemoryProductData : IProductData

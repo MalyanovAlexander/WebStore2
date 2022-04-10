@@ -8,7 +8,7 @@ using WebStore.Domain.ViewModels;
 using WebStore.Interfaces.Services;
 using WebStore.ViewModels;
 
-namespace WebStore.Services.InSQL;
+namespace WebStore.Services.Services.InSQL;
 
 public class SqlOrderService : IOrderService
 {
@@ -49,9 +49,9 @@ public class SqlOrderService : IOrderService
     }
 
     public async Task<Order> CreateOrderAsync(
-        string UserName, 
-        CartViewModel Cart, 
-        OrderViewModel OrderModel, 
+        string UserName,
+        CartViewModel Cart,
+        OrderViewModel OrderModel,
         CancellationToken Cancel = default)
     {
         var user = await _UserManager.FindByNameAsync(UserName).ConfigureAwait(false);
