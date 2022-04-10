@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebStore.ViewModels;
+namespace WebStore.Domain.ViewModels;
 
 public class EmployeesViewModel : IValidatableObject
 {
@@ -37,7 +37,7 @@ public class EmployeesViewModel : IValidatableObject
     public IEnumerable<ValidationResult> Validate(ValidationContext Context)
     {
         if (LastName.Length > 20)
-            yield return new ValidationResult("Длина фамилии превысила 20 символов", new []{ nameof(LastName) });
+            yield return new ValidationResult("Длина фамилии превысила 20 символов", new[] { nameof(LastName) });
 
         yield return ValidationResult.Success!;
     }
