@@ -9,7 +9,7 @@ using WebStore.WebAPI.Clients.Base;
 
 namespace WebStore.WebAPI.Clients.Values
 {
-    internal class ValuesClient : BaseClient, IValuesService
+    public class ValuesClient : BaseClient, IValuesService
     {
         public ValuesClient(HttpClient Client) : base(Client, "api/values") { }
 
@@ -52,7 +52,7 @@ namespace WebStore.WebAPI.Clients.Values
         {
             var response = Http.GetAsync(Address).Result;
             if (response.IsSuccessStatusCode)
-                return response.Content.ReadFromJsonAsync<IEnumerable<string>>().Result;
+                return response.Content.ReadFromJsonAsync<IEnumerable<string>>().Result!;
 
             return Enumerable.Empty<string>();
 
